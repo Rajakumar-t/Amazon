@@ -39,13 +39,15 @@ public class amazon {
 
         // 08) Print first resulting bag info (name, discounted price)
         WebElement firstBagName = driver.findElement(By.xpath("//span[text()='Charm 03 School Backpack']"));
-        WebElement firstBagPrice = driver.findElement(By.xpath("//span[normalize-space()='1,840']"));
+        WebElement firstBagPrice = driver.findElement(By.xpath("(//span[@class='a-price-whole'])[1]"));
 
         System.out.println("First Bag Name: " + firstBagName.getText());
         System.out.println("Discounted Price: ₹" + firstBagPrice.getText());
 
         // 09) Get the page title and close the browser
         System.out.println("Page Title: " + driver.getTitle());
+        Thread.sleep(3000);
+        driver.close();
 
 	}
 
